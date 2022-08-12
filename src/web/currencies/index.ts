@@ -6,9 +6,12 @@ import SolanaConfig from "./solana";
 import ERC20Config from "./erc20";
 import axios from "axios";
 import utils from "../../common/utils";
+import ArweaveConfig from "./arweave";
 
 export default function getCurrency(currency: string, wallet: any, providerUrl?: string, contractAddress?: string): BaseCurrency {
     switch (currency) {
+        case "arweave":
+            return new ArweaveConfig({ name: "arweave", ticker: "AR", minConfirm: 10, providerUrl: providerUrl ?? "https://arweave.net", wallet, isSlow: true })
         case "ethereum":
             return new EthereumConfig({ name: "ethereum", ticker: "ETH", providerUrl: providerUrl ?? "https://main-light.eth.linkpool.io/", wallet })
         case "matic":
