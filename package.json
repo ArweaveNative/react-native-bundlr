@@ -6,6 +6,7 @@
   "author": "Bundlr Network",
   "license": "Apache-2.0",
   "main": "./build/index.js",
+  "react-native": "./build/web/index.js",
   "browser": "./build/web/index.js",
   "types": "./build/index.d.ts",
   "files": [
