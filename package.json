@@ -17,6 +17,7 @@
   "scripts": {
     "dev:build": "rm -rf build && tsc -p tsconfig.json && chmod +x ./build/node/cli.js && yarn run copy-types",
     "prod:build": "yarn run dev:build && webpack && rm ./build/web/bundle.js.LICENSE.txt",
+    "build": "yarn dev:build",
     "lint:check": "eslint src/**",
     "lint:fix": "eslint src/** --fix",
     "copy-types": "cp src/common/types.d.ts build/common && cp src/node/types.d.ts build/node && cp src/web/types.d.ts build/web",
